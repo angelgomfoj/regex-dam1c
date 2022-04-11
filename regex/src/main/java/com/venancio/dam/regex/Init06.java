@@ -3,7 +3,7 @@ package com.venancio.dam.regex;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Init {
+public class Init06 {
 	public static void main(String[] args) {
 		
 		
