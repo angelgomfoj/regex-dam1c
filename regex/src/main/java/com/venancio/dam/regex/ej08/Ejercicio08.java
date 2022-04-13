@@ -19,11 +19,12 @@ public class Ejercicio08 {
 		this.mailPattern = Pattern.compile(mailPattern);
 	}
 	
+	// Método para comprobar si es una dirección de correo electrónico
 	public boolean isMail() {
 		this.matcher = this.mailPattern.matcher(this.toCheck);
 		
 		if(this.matcher.matches()) {
-			return true;			
+			return true;
 		} else {
 			return false;
 		}

@@ -46,6 +46,12 @@ public class Ejercicio07 {
 				this.passportPattern = Pattern.compile(sc.nextLine() /* PASSPORT_PAT_DEFAULT */);
 				
 				System.out.println(this.isPassport(passportPattern)? "Confirmado: El número de documento introducido corresponde a un pasaporte." : "¡ERROR!");
+				
+//				if(this.isPassport(passportPattern)) {
+//					System.out.println("Confirmado: El número de documento introducido corresponde a un pasaporte.");
+//				} else {
+//					System.out.println("¡ERROR");
+//				}
 			}
 			
 		}
