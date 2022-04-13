@@ -1,4 +1,4 @@
-package com.venancio.dam.regex;
+package com.venancio.dam.regex.ej06;
 
 import java.util.regex.Pattern;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 public class Ejercicio06 {
 	
-	private StringBuilder sciText;
+	private String sciText;
 	private Pattern pattern;
 	private Map<String, Integer> wordList;
 	
@@ -41,22 +41,22 @@ public class Ejercicio06 {
 			+ "2 Siglas para ácido ribonucleico, una macromolécula biológica formada por nucleótidos que, en la mayoría de los casos, se encuentra en forma de cadena sencilla, es decir, con los nucleótidos sin aparear.\r\n"
 			+ "3 Una endonucleasa es una proteína capaz de reconocer una secuencia concreta de nucleótidos en una molécula de ADN y cortar dicha molécula en el mismo punto de reconocimiento.\r\n"
 			+ "4 En realidad lo habitual no es reemplazar un gen por otro, sino reemplazar alelos. Se denominan alelos a todas aquellas posibles formas o variantes que puede tomar un mismo gen. Es decir, el gen sigue siendo el mismo pero cambia de variante, lo que conlleva, en la mayoría de las ocasiones, un cambio también de función. Para comprenderlo mejor, tomando un ejemplo mendeliano, el gen que regula el color de los guisantes puede tomar el alelo «A», y entonces el guisante será amarillo, o el alelo «a», y en cambio el guisante será verde; pero el gen «color» sigue siendo el mismo, por mucho que cambie su alelo.";
-	private final String DEFAULT_PATTERN = "[\s|.|,|:|;|(|)|[|]|{|}|¿|?|¡|!|\r\n]\s*";
+//	private final String DEFAULT_PATTERN = "[\s|.|,|:|;|(|)|[|]|{|}|¿|?|¡|!|\r\n]\s*";
 	
-	public Ejercicio06() {
-		this.sciText = new StringBuilder(DEFAULT_SCI_TEXT);
-		this.pattern = Pattern.compile(DEFAULT_PATTERN);
-		this.wordList = new HashMap<>();
-	}
+//	public Ejercicio06() {
+//		this.sciText = DEFAULT_SCI_TEXT;
+//		this.pattern = Pattern.compile(DEFAULT_PATTERN);
+//		this.wordList = new HashMap<>();
+//	}
 	
 	public Ejercicio06(String pat) {
-		this.sciText = new StringBuilder(DEFAULT_SCI_TEXT);
+		this.sciText = DEFAULT_SCI_TEXT;
 		this.pattern = Pattern.compile(pat);
 		this.wordList = new HashMap<>();
 	}
 	
 	public Ejercicio06(String input, String pat) {
-		this.sciText = new StringBuilder(input);
+		this.sciText = input;
 		this.pattern = Pattern.compile(pat);
 		this.wordList = new HashMap<>();
 	}
@@ -86,7 +86,9 @@ public class Ejercicio06 {
 	/* Método que, tras determinar e indicarle el rango de cuántas veces se ha de repetir una palabra para
 	considerarla término, extrae únicamente las palabras que aparecen en el texto un número de veces dentro
 	de rango especificado */
-	public void termExtraction(Map<String, Integer> wordList, int minTimes, int maxTimes) {
+	public void termExtraction(int minTimes, int maxTimes) {
+		
+		this.wordExtraction();
 		
 		// Mediante un iterator, eliminamos del mapa las palabras con menos repeticiones de las indicadas
 		if(wordList.isEmpty()) {
@@ -128,10 +130,10 @@ public class Ejercicio06 {
 	}
 	
 	// Getters y setters
-	public StringBuilder getSciText() {
+	public String getSciText() {
 		return sciText;
 	}
-	public void setSciText(StringBuilder newText) {
+	public void setSciText(String newText) {
 		this.sciText = newText;
 	}
 

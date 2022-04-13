@@ -1,6 +1,5 @@
-package com.venancio.dam.regex;
+package com.venancio.dam.regex.ej06;
 
-import java.util.Map;
 import java.util.Scanner;
 
 public class Init06 {
@@ -29,13 +28,8 @@ public class Init06 {
 		Ejercicio06 ej6A = new Ejercicio06(pattern);
 //		Ejercicio06 ej6B = new Ejercicio06(text, pattern);
 		
-//		Map<String, Integer> words = ej6.wordExtraction();
-//		System.out.println(words);
-		Map<String, Integer> wrds = ej6A.wordExtraction();
-//		System.out.println(wrds);
-		
-//		ej6.termExtraction(words, 3, 8);
-		ej6A.termExtraction(wrds, min, max);
+//		ej6.termExtraction(3, 8);
+		ej6A.termExtraction(min, max);
 
 	}
 }

@@ -1,4 +1,4 @@
-package com.venancio.dam.regex;
+package com.venancio.dam.regex.ej07;
 
 import java.util.Scanner;
 
@@ -13,9 +13,9 @@ public class Init07 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Por favor, introduzca el número de documento que quiere comprobar: ");
-		String doc = sc.nextLine();
-		System.out.print("Por favor, introduzca ahora el patrón que le permita comprobar si se trata de un DNI o un pasaporte: ");
+		System.out.print("Por favor, introduzca el número de documento que quiere comprobar (incluidas las letras y los ceros a la izquierda si los tiene): ");
+		String doc = sc.nextLine().toUpperCase();
+		System.out.print("Por favor, introduzca ahora el patrón que le permitirá comprobar si se trata de un DNI o un pasaporte: ");
 		String pat = sc.nextLine();
 		
 		Ejercicio07 ej7A = new Ejercicio07(doc, pat);

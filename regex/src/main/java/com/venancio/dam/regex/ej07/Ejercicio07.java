@@ -1,4 +1,4 @@
-package com.venancio.dam.regex;
+package com.venancio.dam.regex.ej07;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -10,27 +10,26 @@ public class Ejercicio07 {
 	private Pattern dniPattern;
 	private Pattern passportPattern;
 	private Pattern commonPattern;
+	private Matcher matcher;
 	
-	private final String TO_CHECK_DEFAULT = "65247921X REM697254";
+//	private final String TO_CHECK_DEFAULT = "65247921X REM697254";
+//	private final String COMMON_PAT_DEFAULT = "([A-Z]{0,3})*[0-9]{6}([0-9]{2}[A-Z]{1})*";
 //	private final String DNI_PAT_DEFAULT = "[0-9]{8}[A-Z]{1}";
 //	private final String PASSPORT_PAT_DEFAULT = "[A-Z]{3}[0-9]{6}";
-	private final String COMMON_PAT_DEFAULT = "([A-Z]{0,3})*[0-9]{6}([0-9]{2}[A-Z]{1})*";
 	
-	
-	public Ejercicio07() {
-		this.toCheck = TO_CHECK_DEFAULT;
-		this.commonPattern = Pattern.compile(COMMON_PAT_DEFAULT);
-	}
+//	public Ejercicio07() {
+//		this.toCheck = TO_CHECK_DEFAULT;
+//		this.commonPattern = Pattern.compile(COMMON_PAT_DEFAULT);
+//	}
 	
 	public Ejercicio07(String toCheck, String commonPattern) {
 		this.toCheck = toCheck;
 		this.commonPattern = Pattern.compile(commonPattern);
 	}
 	
-	private Matcher matcher;
-	
+	// Método para determinar si es un DNI o un pasaporte
 	public void isDniOrPassport() {
-		matcher = this.commonPattern.matcher(this.toCheck);
+		this.matcher = this.commonPattern.matcher(this.toCheck);
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -55,8 +54,9 @@ public class Ejercicio07 {
 
 	}
 	
-	private boolean isDni(Pattern dniPattern) {
-		matcher = dniPattern.matcher(this.toCheck);
+	// Método para confirmar que es un DNI
+	public boolean isDni(Pattern dniPattern) {
+		this.matcher = dniPattern.matcher(this.toCheck);
 		
 		if(matcher.matches()) {
 			return true;
@@ -65,8 +65,9 @@ public class Ejercicio07 {
 		}
 	}
 	
-	private boolean isPassport(Pattern passportPattern) {
-		matcher = passportPattern.matcher(this.toCheck);
+	// Método para confirmar que es un pasaporte
+	public boolean isPassport(Pattern passportPattern) {
+		this.matcher = passportPattern.matcher(this.toCheck);
 		
 		if(matcher.matches()) {
 			return true;
@@ -102,6 +103,13 @@ public class Ejercicio07 {
 	}
 	public void setCommonPattern(String commonPattern) {
 		this.commonPattern = Pattern.compile(commonPattern);
+	}
+
+	public Matcher getMatcher() {
+		return matcher;
+	}
+	public void setMatcher(Matcher matcher) {
+		this.matcher = matcher;
 	}
 
 }
