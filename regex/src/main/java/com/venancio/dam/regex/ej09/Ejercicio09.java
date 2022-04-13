@@ -14,7 +14,7 @@ public class Ejercicio09 {
 
 	private final String TO_SWITCH_DEFAULT = "Gómez Foj, Ángel\nMartín Soriano, Jennifer\nVizán Ramos, Miguel\n";
 	private final String LAST_NAME_PATTERN = "([A-Z].*\s)?[A-Z].*,\s";
-	private final String NAME_PATTERN = "(Ángel|Jennifer|Miguel)";
+	private final String NAME_PATTERN = "(Ángel|Jennifer|Miguel)\\n";
 	
 	public Ejercicio09() {
 		this.toSwitch = TO_SWITCH_DEFAULT;
@@ -22,7 +22,7 @@ public class Ejercicio09 {
 		this.namePattern = Pattern.compile(NAME_PATTERN);
 	}
 	
-	public StringBuilder swithcOrder() {
+	public String swithcOrder() {
 		List<String> sortingList = new ArrayList<>();
 		
 		this.matcher = namePattern.matcher(toSwitch);
@@ -49,7 +49,9 @@ public class Ejercicio09 {
 			switched.append(string);
 		}
 		
-		return switched;
+		String switchedString = switched.toString();
+		
+		return switchedString;
 		
 	}
 	

@@ -8,7 +8,7 @@ public class Init09 {
 		
 		Ejercicio09 ej9 = new Ejercicio09();
 		
-		System.out.println(ej9.swithcOrder().toString());
+		System.out.println(ej9.swithcOrder());
 		
 //		Scanner sc = new Scanner(System.in);
 //		
